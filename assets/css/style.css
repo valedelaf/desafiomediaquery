@@ -1,0 +1,147 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+body{
+    display: grid;
+    grid-template-areas: 
+    "menu"
+    "section"
+    "main"
+    "footer";
+}
+menu{
+    grid-area: menu;
+    display: flex;
+    background-color: rgb(182, 239, 221);
+    height: 10vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ul{
+    display: none;
+}
+section {
+    grid-area: section;
+    background-color: rgb(185, 185, 185);
+    height: 10vh;
+    text-align: center;
+    align-content: center;
+    line-height: 30px;
+}
+main{
+    grid-area: main;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.products{
+    display: grid;
+        grid-template-columns: auto;
+        gap: 20px;
+        margin: 20px;
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    border: 1px gray solid;
+    width: 300px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.imagen{
+    width: 250px;
+    padding: 30px 30px 10px 30px;
+    object-fit: cover;
+}
+
+main, p{
+    text-align: center;
+    line-height: 30px;
+}
+
+button{
+    width: 30%;
+
+}
+.paginador {
+    grid-area: paginador;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  
+  .paginador a {
+    color: rgb(49, 124, 100);
+    padding: 1px 8px;
+    text-decoration: none;
+    border: 1px solid rgb(49, 124, 100);
+
+  }
+  .paginador a:hover{
+    background-color: rgb(182, 239, 221) ;
+  }
+  footer, p {
+    font-size: 12px;
+  }
+footer{
+    grid-area: footer;
+    background-color:  rgb(182, 239, 221);
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.icons{
+  margin-top: 10px ;
+}
+@media screen and (min-width: 576px) {
+    body{
+        display: grid;
+        grid-template-areas: 
+        "menu section"
+        "menu main"
+        "footer main";
+        grid-template-columns: 1fr 4fr;
+    }
+
+    menu{
+        grid-area: menu;
+        display: flex;
+        background-color: rgb(182, 239, 221);
+        flex-direction: column;
+        height: auto;
+        justify-content: flex-start;
+        padding-top: 50px;
+    }
+
+    ul{
+        display: inline;
+        list-style-type: none;
+        line-height: 50px;
+        padding-top: 50px;
+    }
+    li:hover{
+        color:white;
+    }
+    .icon{
+        display: none;
+    }
+    .products{
+        display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 20px;
+            margin: 20px;
+    }
+}
